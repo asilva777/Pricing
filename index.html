@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitio+ Pricing Plans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f2f7f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #009688;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .plan {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 30px;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .plan:hover {
+      transform: translateY(-10px);
+    }
+
+    .plan h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #ce00ce;
+    }
+
+    .price {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #555;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #009688;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta:hover {
+      background-color: #00796b;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tiered Pricing</h1>
+  </header>
+
+  <div class="container" id="plansContainer">
+  </div>
+
+  <script>
+    const plans = [
+      {
+        title: "Essential Care Plan",
+        price: "Free or Subsidized",
+        features: [
+          "Initial assessment (online or in-person)",
+          "1 session/month of Talk Therapy or Support",
+          "Access to self-help tools",
+          "Referral support",
+          "Appointment reminders"
+        ]
+      },
+      {
+        title: "Guided Support Plan",
+        price: "₱499/month",
+        features: [
+          "2 sessions/month",
+          "Personalized resilience tools",
+          "Weekly guided check-ins",
+          "Monthly group support",
+          "Dashboard access"
+        ]
+      },
+      {
+        title: "Focused Care Plan",
+        price: "₱999/month",
+        features: [
+          "4 sessions/month",
+          "Quarterly psychiatric consult",
+          "Tailored treatment goals",
+          "Emergency text support",
+          "CASE Profile access"
+        ]
+      },
+      {
+        title: "Comprehensive Recovery Plan",
+        price: "₱1,999/month",
+        features: [
+          "8 sessions/month",
+          "Monthly psychiatrist consult",
+          "Multidisciplinary Care Planning",
+          "Medication monitoring",
+          "Premium therapy resources"
+        ]
+      },
+      {
+        title: "Pay-As-You-Go",
+        price: "Flexible",
+        features: [
+          "Psychiatric Consult – ₱1,200",
+          "Psychotherapy – ₱900",
+          "Life Coaching – ₱750",
+          "Psychosocial Support – ₱600",
+          "CASE Report – ₱399"
+        ]
+      }
+    ];
+
+    const container = document.getElementById('plansContainer');
+
+    plans.forEach(plan => {
+      const div = document.createElement('div');
+      div.className = 'plan';
+      div.innerHTML = `
+        <h2>${plan.title}</h2>
+        <div class="price">${plan.price}</div>
+        <ul>${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>
+        <a href="#" class="cta">Select Plan</a>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+
+</html>
